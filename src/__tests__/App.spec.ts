@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 import request from 'supertest';
 
 import { Connection, getConnection, getRepository } from 'typeorm';
@@ -145,7 +147,7 @@ describe('App', () => {
         order_products: expect.arrayContaining([
           expect.objectContaining({
             product_id: product.body.id,
-            price: '500.00',
+            price: 500.0,
             quantity: 5,
           }),
         ]),
@@ -299,7 +301,7 @@ describe('App', () => {
         order_products: expect.arrayContaining([
           expect.objectContaining({
             product_id: product.body.id,
-            price: '500.00',
+            price: 500.0,
             quantity: 5,
           }),
         ]),
