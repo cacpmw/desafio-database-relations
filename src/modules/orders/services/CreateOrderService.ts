@@ -74,7 +74,7 @@ class CreateOrderService {
           foundProduct => foundProduct.id === product.product_id,
         )[index].quantity - product.quantity,
     }));
-    this.productsRepository.updateQuantity(orderProductsQuantity);
+    await this.productsRepository.updateQuantity(orderProductsQuantity);
     return order;
   }
 }
